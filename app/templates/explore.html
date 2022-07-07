@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block app_content %}
+    
+    <h1>Hi, {{ current_user.username }}!</h1>
+    <a class="btn btn-success mb-4" href="{{ url_for('create_post') }}">Create post</a>
+    {% for post in posts %}
+    <div class="alert alert-info">
+        <h2><b><a href="{{ url_for('post', id = post.id) }}">{{ post.title}}</a></b></h2>
+        <p>Author: <a href="{{ url_for('user', id = post.author.id) }}">{{ post.author.username }}</a></p>
+    </div>
+    {% endfor %}
+
+{% endblock %}

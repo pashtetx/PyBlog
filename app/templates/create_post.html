@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% from 'bootstrap4/form.html' import render_form %}
+{% block app_content %}
+    <h1>Register</h1>
+    <div class="row">
+        <div class="col-md-4">
+            {{ render_form(form, button_style = 'success') }}
+        </div>
+    </div>
+    <br>
+    <p>Want to back? <a href="{{ url_for('user', id = current_user.id) }}">Click to back</a></p>
+{% endblock %}

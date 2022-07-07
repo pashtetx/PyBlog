@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block app_content %}
+        
+    <div class="alert alert-info">
+        <h1>{{ post.title }}</h1>
+        <h3>{{ post.intro }}</h3>
+        <p>{{ post.text }}</p>
+    </div>
+    <a href="{{ url_for('user', id = post.user_id) }}">
+        <img class="rounded-circle" src="/static/avatars/{{ post.user_id }}.png" width="40" height="40">
+        
+    </a>    
+
+{% endblock %}
